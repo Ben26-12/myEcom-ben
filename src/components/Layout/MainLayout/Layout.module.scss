@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  // padding-top: calc(v.$header-height + v.$header_spacerTop * 2);
+  width: 100%;
+  height: 2000px;
+}
