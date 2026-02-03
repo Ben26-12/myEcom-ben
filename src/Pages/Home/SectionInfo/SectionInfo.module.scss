@@ -1,0 +1,37 @@
+.wrapper {
+  @include mix.flex_box;
+  width: v.$web_inner_width;
+  padding: 20px 55px 20px 55px;
+  background-color: v.$primary_color;
+  transform: translateY(-50%);
+}
+//info item
+.info-item {
+  @include mix.flex_box;
+  gap: 14px;
+  min-width: 295px;
+  padding: 20px;
+}
+.icon {
+  flex-basis: 30%;
+  @include mix.flex_box;
+  font-size: 3.5rem;
+  path {
+    fill: v.$white_color;
+  }
+}
+.content {
+  flex-basis: 70%;
+}
+.title {
+  display: block;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  line-height: 22px;
+  color: v.$white_color;
+}
+.desc {
+  font-size: 1.6rem;
+  line-height: 21px;
+  color: #ffffffc7;
+}

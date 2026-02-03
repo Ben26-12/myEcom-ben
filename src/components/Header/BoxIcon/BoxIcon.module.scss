@@ -8,11 +8,11 @@
 }
 .count {
   position: absolute;
-  top: -8px;
-  right: -2px;
+  top: -10px;
+  right: -4px;
   color: v.$white_color;
   background-color: v.$secondary_color;
-  padding: 4px;
-  @include mix.borderRadius(8px);
+  padding: 5px;
   font-size: 0.8rem;
+  @include mix.borderRadius(8px);
 }
