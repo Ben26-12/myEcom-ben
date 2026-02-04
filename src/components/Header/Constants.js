@@ -33,6 +33,7 @@ export const HEADER_ACTIONS = [
   {
     icon: faHeart,
     href: "#",
+    count: 0,
   },
   {
     icon: faShoppingCart,

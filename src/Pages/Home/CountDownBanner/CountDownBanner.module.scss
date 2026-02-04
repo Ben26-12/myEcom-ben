@@ -1,0 +1,39 @@
+.countdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 410px;
+  background-size: cover;
+  background-position: center;
+}
+.timmer-wrapper {
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 40px;
+  color: v.$primary_color;
+  margin: 20px 0;
+}
+.btn {
+  width: 160px;
+  height: 40px;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  border: 1px solid v.$primary_color;
+  background-color: v.$primary_color;
+
+  &:hover {
+    background-color: v.$white_color;
+    color: v.$black_color;
+  }
+}

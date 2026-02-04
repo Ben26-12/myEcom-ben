@@ -9,7 +9,7 @@ function Button({
   href,
   onClick,
   primary,
-  outline,
+  small,
   large,
   disabled,
   leftIcon,
@@ -38,7 +38,7 @@ function Button({
     disabled,
     primary,
     large,
-    outline,
+    small,
   });
   return (
     <Comp className={classes} {...props}>

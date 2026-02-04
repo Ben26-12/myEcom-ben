@@ -1,0 +1,93 @@
+.img-container {
+  width: 100%;
+  position: relative;
+
+  &:hover .actions {
+    opacity: 1;
+    animation: slide-rtf 0.4s ease-out forwards;
+  }
+
+  &:hover {
+    .main-img {
+      opacity: 0;
+    }
+    .hover-img {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes slide-rtf {
+  from {
+    transform: translate(50%, -50%);
+  }
+  to {
+    transform: translate(0%, -50%);
+  }
+}
+@keyframes slide-ltr {
+  from {
+    transform: translate(0%, -50%);
+  }
+  to {
+    transform: translate(50%, -50%);
+  }
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.hover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.actions {
+  background-color: v.$white_color;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(-50%);
+  animation: slide-ltr 0.4s ease-out forwards;
+}
+
+.action-btn {
+  padding: 10px;
+  font-size: 16px;
+  background-color: v.$white_color;
+  transition: 0.5s;
+  &:hover {
+    background-color: #d9d9d9;
+  }
+  path {
+    fill: v.$secondary_color;
+  }
+}
+.card-infomation {
+  padding: 10px;
+}
+.card-title {
+  margin-bottom: 5px;
+  font-weight: 400;
+  color: v.$primary_color;
+}
+
+.price {
+  font-size: 1.4rem;
+  color: v.$secondary_color;
+  margin-bottom: 7px;
+}

@@ -8,7 +8,9 @@ function BoxIcon({ item }) {
   return (
     <Button className={cx("icon")} href={item.href}>
       <FontAwesomeIcon icon={item.icon} />
-      {item.count === undefined || <p className={cx("count")}>{item.count}</p>}
+      {item.count === undefined || item.count === 0 || (
+        <p className={cx("count")}>{item.count}</p>
+      )}
     </Button>
   );
 }

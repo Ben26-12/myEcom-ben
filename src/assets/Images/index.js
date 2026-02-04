@@ -2,6 +2,8 @@ import banner from "./Banner.jpg";
 const images = {
   banner,
   logo: "	https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Logo-retina.png",
+  countDownImage:
+    "https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/photo-of-man-wearing-white-hoodie-5474310.jpeg",
   footerLogo:
     "https://xstore.8theme.com/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/marseille-logo.png",
   footerPayments:

@@ -9,7 +9,7 @@
     color: v.$white_color;
   }
 
-  &.outline {
+  &.small {
     @include mix.btn(30px, 30px, 4px, v.$white_color); // Nút trắng viền xám
     border: 1px solid #e1e1e1;
     color: v.$primary_color;

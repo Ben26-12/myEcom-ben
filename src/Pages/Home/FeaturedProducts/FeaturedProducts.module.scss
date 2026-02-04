@@ -4,3 +4,21 @@
   flex-direction: column;
   align-items: center;
 }
+.product-list {
+  @include mix.flex_box;
+  width: 100%;
+  margin-top: 15px;
+}
+.section-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 50%;
+  padding: 15px;
+}
+.section-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}

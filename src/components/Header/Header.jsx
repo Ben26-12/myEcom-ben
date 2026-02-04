@@ -58,7 +58,7 @@ function Header() {
             <img src={images.logo} alt="BenStore" />
           </Link>
         </div>
-        {/* left menu  */}
+        {/* right menu  */}
         <div className={cx("right-menu")}>
           <div className={cx("nav-menu")}>
             {NAV_ACTIONS.map((item, index) => {
