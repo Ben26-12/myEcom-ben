@@ -5,6 +5,8 @@ import SectionInfo from "@/Pages/Home/SectionInfo";
 import FeatureProducts from "@/Pages/Home/FeaturedProducts";
 import images from "@/assets/Images";
 import styles from "./Home.module.scss";
+import SaleSection from "@/Pages/Home/SaleSection";
+
 const cx = classNames.bind(styles);
 function Home() {
   return (
@@ -20,6 +22,8 @@ function Home() {
       <SectionInfo />
       {/* Feature products  */}
       <FeatureProducts />
+      {/* Sales of the years*/}
+      <SaleSection />
     </div>
   );
 }

@@ -8,7 +8,6 @@ const cx = classNames.bind(styles);
 
 function CountDownTimer({ targetDate }) {
   //target này luôn ưu tiên kiểu ISO
-  //validate đúng ngày > throw ra lỗi
 
   const timerID = useRef();
   const getTime = () => {
@@ -52,7 +51,6 @@ function CountDownTimer({ targetDate }) {
         return (
           <div key={key} className={cx("time-box")}>
             <p className={cx(key)}>
-              {/* Sửa: Bọc trong ngoặc nhọn và thêm () cho toUpperCase */}
               {`${handleFormat(finalDate[key])}`}
               <span>{`${key} `}</span>
             </p>

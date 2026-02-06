@@ -29,11 +29,11 @@ function ProductCard({ item }) {
       </div>
       {/* card information */}
       <div className={cx("card-information")}>
-        <div className={cx("card-title")}>{item.title}</div>
+        <div className={cx("card-title")}>{item.name}</div>
         <div className={cx("price")}>
           {typeof item.price == "object"
             ? `$${item.price.min} - $${item.price.max}`
-            : item.price}
+            : `$${item.price}`}
         </div>
       </div>
     </div>

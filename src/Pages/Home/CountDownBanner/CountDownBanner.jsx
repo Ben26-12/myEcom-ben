@@ -11,12 +11,14 @@ function CountDownBanner() {
       className={cx("countdown-wrapper")}
       style={{ backgroundImage: `url(${images.countDownImage})` }}
     >
-      <CountDownTimer targetDate="2026-02-06T16:00:00.000+07:00" />
+      <CountDownTimer targetDate="2027-02-06T16:00:00.000+07:00" />
       <div className={cx("content")}>
         <div className={cx("title")}>The classics make a comeback</div>
-        <Button primary className={cx("btn")}>
-          Buy now
-        </Button>
+        <a href="#">
+          <Button primary className={cx("btn")}>
+            Buy now
+          </Button>
+        </a>
       </div>
     </div>
   );

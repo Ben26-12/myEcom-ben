@@ -1,0 +1,64 @@
+.sale-section {
+  @include mix.flex_box;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.box-img-1 {
+  @include mix.flex_box;
+  flex: 1;
+  justify-content: flex-end;
+
+  img {
+    transition: 2s;
+    will-change: transform;
+  }
+}
+.box-img-2 {
+  @include mix.flex_box;
+  flex: 1;
+  justify-content: flex-start;
+
+  img {
+    transition: 2s;
+    will-change: transform;
+  }
+}
+
+.box-content {
+  @include mix.flex_box;
+  flex-direction: column;
+  width: 20%;
+
+  .more-btn {
+    background-color: v.$white_color;
+    color: v.$primary_color;
+    border: 1px solid v.$primary_color;
+    border-radius: 3px;
+    font-size: 1.4rem;
+    padding: 12px 50px;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: v.$primary_color;
+      color: v.$white_color;
+    }
+  }
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 46px;
+  color: v.$primary_color;
+}
+
+.desc {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 26px;
+  color: v.$secondary_color;
+  margin: 20px 0;
+}
