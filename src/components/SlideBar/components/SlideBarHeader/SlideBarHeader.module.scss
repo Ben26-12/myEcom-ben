@@ -1,0 +1,37 @@
+.slider-header {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.header-content {
+  @include mix.flex_box;
+  color: v.$secondary_color;
+  cursor: pointer;
+
+  &:hover {
+    .header-title::after {
+      width: 100%;
+      left: 0;
+      right: unset;
+    }
+  }
+}
+.header-title {
+  font-size: 1.8rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    background-color: v.$secondary_color;
+    width: 0;
+    transition: 0.3s;
+  }
+}
+.header-icon {
+  margin-right: 10px;
+  font-size: 1.8rem;
+}

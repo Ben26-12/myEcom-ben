@@ -4,11 +4,7 @@ import {
   faLinkedin,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  faSync,
-  faHeart,
-  faShoppingCart,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export const SOCIAL_DATA = [
   {
@@ -21,24 +17,22 @@ export const SOCIAL_DATA = [
   },
   {
     icon: faLinkedin,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/nguyenly2612/",
   },
 ];
 
 export const HEADER_ACTIONS = [
   {
-    icon: faSync,
-    href: "#",
-  },
-  {
     icon: faHeart,
-    href: "#",
+    href: "",
     count: 0,
+    type: "wishList",
   },
   {
     icon: faShoppingCart,
-    href: "#",
+    href: "",
     count: 0,
+    type: "cart",
   },
 ];
 export const NAV_MENU = [
@@ -49,6 +43,6 @@ export const NAV_MENU = [
 
 export const NAV_ACTIONS = [
   { title: "Contacts", to: config.routes.contact },
-  { title: "Sign In", to: config.routes.login },
+  { title: "Sign In", to: "" },
   { title: "Search", to: config.routes.search },
 ];

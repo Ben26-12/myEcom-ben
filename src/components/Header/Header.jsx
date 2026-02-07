@@ -13,7 +13,9 @@ import BoxIcon from "@components/Header/BoxIcon";
 import NavMenu from "@components/Header/NavMenu";
 import config from "@/config";
 import { useEffect, useState } from "react";
+
 const cx = classNames.bind(styles);
+
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {

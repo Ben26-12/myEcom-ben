@@ -11,6 +11,16 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
+//scroll bar
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  background: var(--et_border-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+}
 body {
   font-family: v.$font_family;
   line-height: 1.5;
