@@ -64,26 +64,52 @@
   opacity: 0;
   transform: translateY(-50%);
   animation: slide-ltr 0.4s ease-out forwards;
+
+  button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: v.$white_color;
+    transition: 0.5s;
+    &:hover {
+      background-color: #d9d9d9;
+    }
+    path {
+      fill: v.$secondary_color;
+    }
+  }
 }
 
-.action-btn {
-  padding: 10px;
-  font-size: 16px;
-  background-color: v.$white_color;
-  transition: 0.5s;
-  &:hover {
-    background-color: #d9d9d9;
-  }
-  path {
-    fill: v.$secondary_color;
-  }
-}
 .card-information {
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.variants {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
+
+  .size {
+    padding: 8px;
+    color: v.$primary_color;
+    border: 1px solid v.$white_color;
+    width: 34px;
+    height: 34px;
+    border-radius: 52px;
+
+    &:hover {
+      border: 1px solid v.$primary_color;
+    }
+
+    &.activeSize {
+      border: 1px solid v.$primary_color;
+    }
+  }
+}
+
 .card-title {
   margin-bottom: 5px;
   font-weight: 400;

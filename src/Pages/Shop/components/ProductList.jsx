@@ -22,7 +22,14 @@ function ProductList() {
     <>
       <div className={cx("product-list")}>
         {products.map((product) => {
-          return <ProductCard key={product._id} showATC item={product} />;
+          return (
+            <ProductCard
+              key={product._id}
+              showATC
+              showVariants
+              item={product}
+            />
+          );
         })}
       </div>
       <div className={cx("more-btn")}>

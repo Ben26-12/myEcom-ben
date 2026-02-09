@@ -4,16 +4,16 @@
   width: 100%;
   background-color: transparent;
   padding: v.$header_spacerTop 0;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
   z-index: 10;
-
   &.sticky {
     box-shadow: 2px 0 12px 0 rgba(0, 0, 0, 0.15);
     background-color: v.$white_color;
     animation: slideDown ease-out 0.5s forwards;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
   }
 }
 @keyframes slideDown {
@@ -31,11 +31,6 @@
   width: v.$web_inner_width;
   height: v.$header_height;
 }
-.right-menu,
-.left-menu {
-  @include mix.flex_box;
-  gap: 20px;
-}
 //box icon
 .box-icon {
   display: flex;
@@ -52,4 +47,18 @@
   @include mix.flex_box;
   gap: 20px;
   height: 100%;
+}
+
+.right-menu,
+.left-menu {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+.left-menu {
+  justify-content: flex-start;
+}
+
+.right-menu {
+  justify-content: flex-end;
 }

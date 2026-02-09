@@ -4,18 +4,21 @@ import styles from "./WishList.module.scss";
 import ProductItem from "@/components/SlideBar/components/ProductItem";
 import Button from "@/components/Button";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { slideBarContext } from "@/contexts/SlideBarProvider";
 import config from "@/config";
+import MOCK_WISHLIST from "./constants";
 const cx = classNames.bind(styles);
 function WishList() {
-  const { setIsOpen } = useContext(slideBarContext);
+  const { setIsOpen, setType } = useContext(slideBarContext);
   const navigate = useNavigate();
   const handleNavigate = (path) => {
     setIsOpen(false);
     navigate(path);
   };
-
+  useEffect(() => {
+    setType("wishList");
+  });
   const handleAddAllToCart = () => {
     // 1. Hiện loading (nếu có)
     // 2. Gọi API để thêm toàn bộ wishlist vào cart: await api.addAllToCart(wishlistData);
@@ -25,9 +28,9 @@ function WishList() {
   return (
     <div className={cx("wishList")}>
       <div className={cx("wishList-body")}>
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
+        {MOCK_WISHLIST.map((product) => {
+          return <ProductItem product={product} />;
+        })}
       </div>
 
       <div className={cx("wishList-footer")}>

@@ -43,6 +43,5 @@ export const NAV_MENU = [
 
 export const NAV_ACTIONS = [
   { title: "Contacts", to: config.routes.contact },
-  { title: "Sign In", to: "" },
   { title: "Search", to: config.routes.search },
 ];

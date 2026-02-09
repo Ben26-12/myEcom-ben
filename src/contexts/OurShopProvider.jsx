@@ -6,8 +6,6 @@ export const OurShopContext = createContext();
 function OurShopProvider({ children }) {
   const sortOptions = [
     { label: "Default sorting", value: "0" },
-    { label: "Sort by popularity", value: "1" },
-    { label: "Sort by average rating", value: "2" },
     { label: "Sort by latest", value: "3" },
     { label: "Sort by price: low to high", value: "4" },
     { label: "Sort by price: high to low", value: "5" },
@@ -23,13 +21,18 @@ function OurShopProvider({ children }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    let isUnmounted = false;
+
     getProduct({
       sortType: sortValue,
       page: 1,
       limit: perPageValue,
     }).then((res) => {
-      setProducts(res.data.contents ?? res);
+      if (!isUnmounted) {
+        setProducts(res.data.contents ?? res);
+      }
     });
+    return () => (isUnmounted = true);
   }, [sortValue, perPageValue]);
   const value = {
     sortOptions,
