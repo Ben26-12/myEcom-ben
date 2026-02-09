@@ -10,6 +10,7 @@ import { deleteItem } from "@/apiServices/cartService";
 import { useContext } from "react";
 import { slideBarContext } from "@/contexts/SlideBarProvider";
 import { MOCK_USER_ID } from "@/components/ProductCard/constants";
+import { toast } from "react-toastify";
 
 const cx = classNames.bind(styles);
 function ProductItem({ product }) {
@@ -23,9 +24,10 @@ function ProductItem({ product }) {
       })
         .then((res) => {
           handleGetListProductsCart(userId, "cart");
+          toast.info("Delete item successfully");
         })
         .catch((err) => {
-          console.log(err);
+          toast.error("Something went wrong, can not delete item");
         });
     }
   };

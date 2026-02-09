@@ -15,6 +15,7 @@ function SlideBarProvider({ children }) {
         })
         .catch((err) => {
           setListProductCart([]);
+          toast.error("Can not get products, please try again");
         });
     }
   };

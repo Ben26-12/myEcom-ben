@@ -11,6 +11,7 @@ import { useContext, useState } from "react";
 import { MOCK_USER_ID } from "@/components/ProductCard/constants";
 import { addProductToCart } from "@/apiServices/cartService";
 import { slideBarContext } from "@/contexts/SlideBarProvider";
+import { toast } from "react-toastify";
 const cx = classNames.bind(styles);
 
 function ProductCard({ item, showATC, showVariants }) {
@@ -35,14 +36,14 @@ function ProductCard({ item, showATC, showVariants }) {
       // Nếu hiện variant thì cần chọn variants trước khi add vào cart
       if (sizeChoose) {
         addProductToCart(data)
-          .then((res) => handleGetListProductsCart(MOCK_USER_ID, "cart"))
-          .catch((err) => console.error(err));
+          .then((res) => {
+            handleGetListProductsCart(MOCK_USER_ID, "cart");
+            toast.success("Added to cart!");
+          })
+          .catch((err) => toast.error("Failed to add!"));
       } else {
-        alert("Please choose your variants");
+        toast.error("Please choose your variants to add to cart");
       }
-    } else {
-      //không hiện variant thì cho add luôn vào cart với variant default đầu tiên
-      alert("adding to cart successfully without variant");
     }
   };
   return (
