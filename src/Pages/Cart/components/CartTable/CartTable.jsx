@@ -5,15 +5,41 @@ import { useContext } from "react";
 import { slideBarContext } from "@/contexts/SlideBarProvider";
 import { useNavigate } from "react-router-dom";
 import config from "@/config";
+import SelectInput from "@/components/SelectInput";
+import { addProductToCart } from "@/apiServices/cartService";
+import { toast } from "react-toastify";
 
 const cx = classNames.bind(styles);
 
 function CartTable({ items }) {
   const navigate = useNavigate();
-  const { deleteCartProduct, handleDeleteCart } = useContext(slideBarContext);
+  const { deleteCartProduct, handleGetListProductsCart, handleDeleteCart } =
+    useContext(slideBarContext);
+  const quantityChangeOptions = [
+    { label: "1", value: "1" },
+    { label: "2", value: "2" },
+    { label: "3", value: "3" },
+    { label: "4", value: "4" },
+    { label: "5", value: "5" },
+    { label: "6", value: "6" },
+    { label: "7", value: "7" },
+  ];
 
   const handleNavigatetoProduct = (productId) => {
     navigate(config.routes.product + `/${productId}`);
+  };
+  const updateNewProductInCart = (data) => {
+    addProductToCart(data)
+      .then((res) => {
+        console.log(res.data);
+        toast.success("Update successfully");
+        handleGetListProductsCart(MOCK_USER_ID, "cart");
+      })
+      .catch((err) => {
+        toast.error(
+          "Something went wrong, can not update product, try again later",
+        );
+      });
   };
 
   return (
@@ -62,7 +88,20 @@ function CartTable({ items }) {
               <td>{item.sku}</td>
               <td>
                 <div className={cx("quantity-box")}>
-                  <span>{item.quantity}</span>
+                  <SelectInput
+                    className={cx("quantity-input")}
+                    getValue={(newQuantity) => {
+                      const data = {
+                        userId: MOCK_USER_ID,
+                        productId: item.productId,
+                        quantity: Number(newQuantity - item.quantity),
+                        size: item.size,
+                        isMultiple: false,
+                      };
+                      updateNewProductInCart(data);
+                    }}
+                    options={quantityChangeOptions}
+                  />
                 </div>
               </td>
               <td className={cx("subtotal-price")}>

@@ -50,16 +50,11 @@
   height: 100%;
 }
 
-.right-menu,
+.right-menu {
+  display: flex;
+  gap: 8px;
+}
 .left-menu {
   display: flex;
   gap: 20px;
-  flex: 1;
-}
-.left-menu {
-  justify-content: flex-start;
-}
-
-.right-menu {
-  justify-content: flex-end;
 }

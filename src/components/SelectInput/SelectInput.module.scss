@@ -5,12 +5,14 @@
   padding: 8px 20px 8px 8px;
   color: v.$secondary_color;
   font-size: 1.4rem;
-  border: 1px solid v.$secondary_color;
+  border: 1px solid v.$sub_color;
   appearance: none; // Ẩn mũi tên mặc định của trình duyệt
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
   outline: none;
+  width: 100%;
+  text-align: center;
 }
 
 .arrow-input {

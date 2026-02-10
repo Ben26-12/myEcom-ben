@@ -13,6 +13,7 @@ function SlideBarProvider({ children }) {
       getCart(userId)
         .then((res) => {
           setListProductCart(res.data.data);
+          console.log(listProductCart);
         })
         .catch((err) => {
           setListProductCart([]);

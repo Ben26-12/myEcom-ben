@@ -66,10 +66,11 @@
 .quantity-box {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #e5e5e5;
-  padding: 8px 16px;
-  min-width: 60px;
   justify-content: center;
+
+  .quantity-input {
+    width: 50px;
+  }
 }
 
 .subtotal-price {

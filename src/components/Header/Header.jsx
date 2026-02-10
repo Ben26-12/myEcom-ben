@@ -12,7 +12,7 @@ import images from "@assets/Images";
 import BoxIcon from "@components/Header/BoxIcon";
 import NavMenu from "@components/Header/NavMenu";
 import config from "@/config";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { slideBarContext } from "@/contexts/SlideBarProvider";
 
 const cx = classNames.bind(styles);
@@ -20,7 +20,11 @@ const cx = classNames.bind(styles);
 function Header() {
   const { listProductCart } = useContext(slideBarContext);
   const [isScrolled, setIsScrolled] = useState(false);
-  const cartCount = listProductCart.length;
+  const cartCount = useMemo(() => {
+    return listProductCart.reduce((acc, product) => {
+      return acc + product.quantity;
+    }, 0);
+  });
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -40,13 +44,24 @@ function Header() {
   return (
     <header className={wrapperClass}>
       <div className={cx("container")}>
+        {/* logo */}
+        <div className={cx("logo")}>
+          <Link to={config.routes.home}>
+            <img src={images.logo} alt="BenStore" />
+          </Link>
+        </div>
         {/* left menu  */}
         <div className={cx("left-menu")}>
-          <div className={cx("box-icon")}>
-            {SOCIAL_DATA.map((item, index) => {
-              return <BoxIcon item={item} key={index} />;
+          <div className={cx("nav-menu")}>
+            {NAV_ACTIONS.map((item, index) => {
+              return (
+                <div key={index} className={cx("nav-item")}>
+                  <NavMenu item={item} />
+                </div>
+              );
             })}
           </div>
+
           <div className={cx("nav-menu")}>
             {NAV_MENU.map((item, index) => {
               return (
@@ -57,21 +72,12 @@ function Header() {
             })}
           </div>
         </div>
-        {/* logo */}
-        <div className={cx("logo")}>
-          <Link to={config.routes.home}>
-            <img src={images.logo} alt="BenStore" />
-          </Link>
-        </div>
+
         {/* right menu  */}
         <div className={cx("right-menu")}>
-          <div className={cx("nav-menu")}>
-            {NAV_ACTIONS.map((item, index) => {
-              return (
-                <div key={index} className={cx("nav-item")}>
-                  <NavMenu item={item} />
-                </div>
-              );
+          <div className={cx("box-icon")}>
+            {SOCIAL_DATA.map((item, index) => {
+              return <BoxIcon item={item} key={index} />;
             })}
           </div>
           <div className={cx("box-icon")}>
