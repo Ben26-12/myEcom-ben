@@ -6,7 +6,6 @@ const routes = {
   search: "/search",
   product: "/product",
   cart: "/cart",
-  wishlist: "/wishlist",
   checkout: "/checkout",
 };
 

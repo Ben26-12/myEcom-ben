@@ -4,7 +4,7 @@ import {
   faLinkedin,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faHeart, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export const SOCIAL_DATA = [
   {
@@ -23,15 +23,9 @@ export const SOCIAL_DATA = [
 
 export const HEADER_ACTIONS = [
   {
-    icon: faHeart,
-    href: "",
-    count: 0,
-    type: "wishList",
-  },
-  {
     icon: faShoppingCart,
     href: "",
-    count: 0,
+    hasCount: true,
     type: "cart",
   },
 ];

@@ -12,12 +12,15 @@ import images from "@assets/Images";
 import BoxIcon from "@components/Header/BoxIcon";
 import NavMenu from "@components/Header/NavMenu";
 import config from "@/config";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { slideBarContext } from "@/contexts/SlideBarProvider";
 
 const cx = classNames.bind(styles);
 
 function Header() {
+  const { listProductCart } = useContext(slideBarContext);
   const [isScrolled, setIsScrolled] = useState(false);
+  const cartCount = listProductCart.length;
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -73,6 +76,9 @@ function Header() {
           </div>
           <div className={cx("box-icon")}>
             {HEADER_ACTIONS.map((item, index) => {
+              if (item.hasCount) {
+                item = { ...item, count: cartCount };
+              }
               return <BoxIcon item={item} key={index} />;
             })}
           </div>

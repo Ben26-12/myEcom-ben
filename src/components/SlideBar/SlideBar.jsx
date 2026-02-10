@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import { useContext } from "react";
 import { slideBarContext } from "@/contexts/SlideBarProvider";
-import { CartDrawer, WishList } from "@/components/SlideBar/SlideBarContent/";
+import { CartDrawer } from "@/components/SlideBar/SlideBarContent/";
 import SlideBarHeader from "@/components/SlideBar/components/SlideBarHeader";
 import Button from "@/components/Button";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -17,8 +17,6 @@ function SlideBar() {
     switch (type) {
       case "cart":
         return <CartDrawer />;
-      case "wishList":
-        return <WishList />;
     }
   };
   //handle đóng slider
