@@ -10,7 +10,7 @@ function SelectInput({ options, getValue, type, defaultValue, className }) {
         <FontAwesomeIcon icon={faAngleDown} />
       </span>
       <select
-        className={cx("select-input")}
+        className={cx("select-input", { [className]: className })}
         onChange={(e) => getValue(e.target.value, type)}
         value={defaultValue}
       >

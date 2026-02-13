@@ -1,0 +1,36 @@
+.page-wrapper {
+  width: 100%;
+}
+.stepper-container {
+  width: 100%;
+}
+.wrapper {
+  width: v.$web_inner_width;
+  margin: 40px auto;
+  padding: 0 20px;
+  color: v.$primary_color;
+}
+
+.coupon-section {
+  margin-bottom: 30px;
+  font-size: 1.4rem;
+
+  .link {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.left-section {
+  flex-basis: 60%;
+  padding-right: 30px;
+}
+
+.right-section {
+  flex: 1;
+}

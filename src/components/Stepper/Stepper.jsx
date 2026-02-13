@@ -5,7 +5,7 @@ function Stepper({ currentStep }) {
   const steps = [
     { id: 1, name: "SHOPPING CART" },
     { id: 2, name: "CHECKOUT" },
-    { id: 3, name: "ORDER STATUS" },
+    { id: 3, name: "THANK YOU" },
   ];
 
   return (

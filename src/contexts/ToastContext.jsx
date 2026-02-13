@@ -4,7 +4,8 @@ function ToastProvider({ children }) {
   return (
     <>
       <ToastContainer
-        autoClose={3000}
+        autoClose={2500}
+        pauseOnFocusLoss={false}
         transition={Zoom}
         draggable
         pauseOnHover={false}

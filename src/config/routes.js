@@ -7,6 +7,7 @@ const routes = {
   product: "/product",
   cart: "/cart",
   checkout: "/checkout",
+  thankyou: "/thankyou",
 };
 
 export default routes;

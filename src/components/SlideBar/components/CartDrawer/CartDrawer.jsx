@@ -58,9 +58,14 @@ function CartDrawer() {
           View cart
         </Button>
         <Button
-          onClick={() => handleNavigate(config.routes.checkout)}
+          onClick={() => {
+            if (listProductCart.length > 0) {
+              handleNavigate(config.routes.checkout);
+            }
+          }}
           large
           className={cx("checkout-btn")}
+          disabled={listProductCart.length <= 0}
         >
           Checkout
         </Button>

@@ -8,6 +8,7 @@ import config from "@/config";
 import Cart from "@/Pages/Cart";
 import Checkout from "@/Pages/Checkout";
 import Product from "@/Pages/Product";
+import ThankYou from "@/Pages/Thankyou";
 export const publicRoutes = [
   {
     path: config.routes.home,
@@ -41,6 +42,10 @@ export const publicRoutes = [
   {
     path: config.routes.checkout,
     component: Checkout,
+  },
+  {
+    path: config.routes.thankyou,
+    component: ThankYou,
   },
 ];
 

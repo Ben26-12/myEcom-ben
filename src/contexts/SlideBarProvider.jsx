@@ -20,7 +20,9 @@ function SlideBarProvider({ children }) {
         });
     }
   };
-
+  useEffect(() => {
+    handleGetListProductsCart(MOCK_USER_ID, "cart");
+  }, []);
   const deleteCartProduct = (productId, userId) => {
     if (type === "cart") {
       deleteItem({

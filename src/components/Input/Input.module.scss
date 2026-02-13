@@ -4,9 +4,10 @@
   justify-content: start;
   align-items: start;
   gap: 4px;
+  margin-bottom: 12px;
 }
 .label {
-  color: v.$secondary_color;
+  color: v.$thr_color;
   text-transform: capitalize;
 }
 .input {
