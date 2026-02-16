@@ -1,6 +1,15 @@
 .select-wrapper {
   position: relative;
 }
+.arrow-input {
+  position: absolute;
+  right: 4px;
+  top: 7px;
+  color: v.$secondary_color;
+  pointer-events: none;
+  font-size: 1.4rem;
+}
+
 .select-input {
   padding: 8px 20px 8px 8px;
   color: v.$secondary_color;
@@ -13,13 +22,11 @@
   outline: none;
   width: 100%;
   text-align: center;
-}
 
-.arrow-input {
-  position: absolute;
-  right: 4px;
-  top: 7px;
-  color: v.$secondary_color;
-  pointer-events: none;
-  font-size: 1.4rem;
+  &.small {
+    padding: 4px 20px 4px 8px;
+    & + .arrow-input {
+      top: 4px;
+    }
+  }
 }

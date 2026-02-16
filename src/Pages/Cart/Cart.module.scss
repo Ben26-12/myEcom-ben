@@ -29,27 +29,8 @@
   }
 }
 
-@media (max-width: 768px) {
-  table {
-    display: block; // Phá vỡ cấu trúc table
-
-    thead {
-      display: none; // Ẩn tiêu đề bảng (Product, Price, Quantity...)
-    }
-
-    tbody,
-    tr,
-    td {
-      display: block; // Ép các hàng và ô thành khối dọc
-      width: 100%;
-    }
-
-    tr {
-      position: relative;
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
-      display: flex; // Dùng flex để sắp xếp lại vị trí ảnh và chữ
-      flex-wrap: wrap;
-    }
+@media (max-width: 739px) {
+  .left-content {
+    flex: 1;
   }
 }

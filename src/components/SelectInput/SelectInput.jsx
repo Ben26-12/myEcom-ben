@@ -3,14 +3,18 @@ import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
-function SelectInput({ options, getValue, type, defaultValue, className }) {
+function SelectInput({
+  small,
+  options,
+  getValue,
+  type,
+  defaultValue,
+  className,
+}) {
   return (
     <div className={cx("select-wrapper", { [className]: className })}>
-      <span className={cx("arrow-input")}>
-        <FontAwesomeIcon icon={faAngleDown} />
-      </span>
       <select
-        className={cx("select-input", { [className]: className })}
+        className={cx("select-input", { [className]: className, small: small })}
         onChange={(e) => getValue(e.target.value, type)}
         value={defaultValue}
       >
@@ -22,6 +26,9 @@ function SelectInput({ options, getValue, type, defaultValue, className }) {
           );
         })}
       </select>
+      <span className={cx("arrow-input")}>
+        <FontAwesomeIcon icon={faAngleDown} />
+      </span>
     </div>
   );
 }

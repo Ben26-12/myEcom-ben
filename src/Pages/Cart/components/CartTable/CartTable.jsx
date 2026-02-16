@@ -44,7 +44,7 @@ function CartTable({ items }) {
   return (
     <div className={cx("left-content")}>
       <table className={cx("product-table")}>
-        <thead>
+        <thead className={cx("desktop-detail")}>
           <tr>
             <th>PRODUCT</th>
             <th>PRICE</th>
@@ -64,13 +64,51 @@ function CartTable({ items }) {
                   style={{ cursor: "pointer" }}
                 />
                 <div className={cx("details")}>
+                  <div className={cx("mobile-detail")}>
+                    <div className={cx("detail")}>
+                      <p
+                        className={cx("name")}
+                        onClick={() => handleNavigatetoProduct(item.productId)}
+                      >
+                        {item.name}
+                      </p>
+                      <p className={cx("size")}>
+                        Size:
+                        <span className={cx("size-value")}>{item.size}</span>
+                      </p>
+                      <div>Price: ${item.price.toFixed(2)}</div>
+                      <div>SKU: {item.sku}</div>
+                      <div className={cx("quantity-box")}>
+                        Quantity:
+                        <SelectInput
+                          small
+                          defaultValue={item.quantity}
+                          className={cx("quantity-input")}
+                          getValue={(newQuantity) => {
+                            const data = {
+                              userId: MOCK_USER_ID,
+                              productId: item.productId,
+                              quantity: Number(newQuantity - item.quantity),
+                              size: item.size,
+                              isMultiple: false,
+                            };
+                            updateNewProductInCart(data);
+                          }}
+                          options={quantityChangeOptions}
+                        />
+                      </div>
+                    </div>
+                    <div className={cx("subtotal-price")}>
+                      ${(item.price * item.quantity).toFixed(2)}
+                    </div>
+                  </div>
                   <p
-                    className={cx("name")}
+                    className={cx("name", "desktop-detail")}
                     onClick={() => handleNavigatetoProduct(item.productId)}
                   >
                     {item.name}
                   </p>
-                  <p className={cx("size")}>
+                  <p className={cx("size", "desktop-detail")}>
                     Size: <span className={cx("size-value")}>{item.size}</span>
                   </p>
                 </div>
@@ -83,9 +121,9 @@ function CartTable({ items }) {
                   ×
                 </button>
               </td>
-              <td>${item.price.toFixed(2)}</td>
-              <td>{item.sku}</td>
-              <td>
+              <td className={cx("desktop-detail")}>${item.price.toFixed(2)}</td>
+              <td className={cx("desktop-detail")}>{item.sku}</td>
+              <td className={cx("desktop-detail")}>
                 <div className={cx("quantity-box")}>
                   <SelectInput
                     defaultValue={item.quantity}
@@ -104,7 +142,7 @@ function CartTable({ items }) {
                   />
                 </div>
               </td>
-              <td className={cx("subtotal-price")}>
+              <td className={cx("subtotal-price", "desktop-detail")}>
                 ${(item.price * item.quantity).toFixed(2)}
               </td>
             </tr>
@@ -118,7 +156,7 @@ function CartTable({ items }) {
           <button>OK</button>
         </div>
         <button onClick={handleDeleteCart} className={cx("clear-btn")}>
-          CLEAR SHOPPING CART
+          CLEAR CART
         </button>
       </div>
     </div>

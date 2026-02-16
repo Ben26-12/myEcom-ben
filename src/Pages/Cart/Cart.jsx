@@ -4,7 +4,6 @@ import CartTable from "@/Pages/Cart/components/CartTable";
 import CartSummary from "@/Pages/Cart/components/CartSummary";
 import { useContext, useEffect, useMemo } from "react";
 import { slideBarContext } from "@/contexts/SlideBarProvider";
-import { MOCK_USER_ID } from "@/components/ProductCard/constants";
 import BlankCart from "@/components/BlankCart";
 import Stepper from "@/components/Stepper";
 
