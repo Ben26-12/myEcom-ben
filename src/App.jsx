@@ -14,7 +14,7 @@ function App() {
     <SearchProvider>
       <ToastProvider>
         <SlideBarProvider>
-          <Router>
+          <Router basename="/myEcom-ben">
             <Search />
             <SlideBar />
             <Routes>
