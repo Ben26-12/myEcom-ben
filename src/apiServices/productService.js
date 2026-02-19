@@ -5,10 +5,10 @@ const getProduct = async (params) => {
   try {
     const res = await httpRequest.get("/product", {
       params,
-    });
+    }); //params là key -> key này sẽ đẩy toàn bộ dữ liệu object param lên url làm query parameters
     return res;
   } catch (error) {
-    console.error("API gọi bị lỗi mất, dùng Mocks product tạm nhé :v");
+    // log error or handling custom logic here
     return MOCK_PRODUCTS;
   }
 };

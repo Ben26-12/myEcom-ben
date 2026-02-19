@@ -55,9 +55,10 @@ function Search() {
       })
         .then((res) => {
           setTotalProducts(res.data.contents ?? res);
-          console.log(res.data.contents);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          // Xử lý lỗi nếu cần, tạm thời ẩn log cho sản xuất
+        });
     }
   }, [isOpenSearch]);
   //debounce value thay đổi thì filter để lấy các product cuối cùng

@@ -10,3 +10,4 @@
   },
   "include": ["src/**/*"]
 }
+//Hướng dẫn Editor để gợi ý code và điều hướng file (ctrl + Click)

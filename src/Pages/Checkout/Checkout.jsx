@@ -82,7 +82,7 @@ function Checkout() {
         totalAmount: total,
         orderDate: new Date().toISOString(),
       };
-      console.log("Order Data:", orderData);
+      // console.log("Order Data:", orderData);
       toast.success("Order is successfully placed", {
         autoClose: 2000,
         onClose: () => navigate(config.routes.thankyou, { state: orderData }),
